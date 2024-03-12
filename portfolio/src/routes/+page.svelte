@@ -10,9 +10,11 @@
         "linkedin - go to my linkedin",
         "resume - download my resume",
         "clear - clear the terminal",
-        "help - list all commands",]
+        "help - list all commands",
+        " ",
+        " "]
     let terminalContent = writable(["Welcome to the terminal", "Type help to see all commands"]);
-    let historial = []
+    let historial = ["Welcome to the terminal", "Type help to see all commands"];
     let command = "";
     function executeCommand() {
         if (command == "whoami") {
@@ -61,12 +63,18 @@
         outline: none;
         color: transparent;
     }
+
+    lines{
+        display: block;
+        margin-bottom: 5px;
+    
+    }
 </style>
 
 
 <background>
     {#each $terminalContent as a, b}
-        <div>{a}</div>
+        <lines>{a}</lines>
     {/each}
     <form on:submit|preventDefault={executeCommand}>
         Visitor@Notsume.dev:~$
